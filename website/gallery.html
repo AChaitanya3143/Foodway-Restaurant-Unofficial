@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Foodway Family Restaurant | Food Photography &amp; Ambiance</title>
+    <meta name="description" content="Explore the visual gallery of Foodway Family Restaurant — our dishes, restaurant ambiance, kitchen, and memorable events in Bhandup West, Mumbai.">
+    <meta name="keywords" content="Foodway Restaurant Gallery, Food Photography, Restaurant Ambiance, Bhandup West, Mumbai Restaurant Photos">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.foodwayrestaurant.com/gallery.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>">
+
+    <!-- Fonts (premium redesign) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Satoshi (body) via Fontshare -->
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
+
+    <!-- CDN CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <!-- Ionicons (outline UI icons) -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+        /* ===================== GALLERY PAGE SPECIFIC STYLES ===================== */
+
+        /* Gallery Hero */
+        .gallery-hero {
+            position: relative;
+            height: 50vh;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: url('https://images.unsplash.com/photo-1547573854-74d2a71d0826?w=1920&h=1080&fit=crop') center center / cover no-repeat;
+            overflow: hidden;
+        }
+
+        .gallery-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.8));
+            z-index: 1;
+        }
+
+        .gallery-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .gallery-hero-content .section-label {
+            color: var(--accent-gold);
+            font-family: var(--f-body, 'Satoshi'), 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .gallery-hero-content h1 {
+            font-family: var(--f-display, 'Cormorant Garamond'), Georgia, serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .gallery-hero-content p {
+            font-family: var(--f-body, 'Satoshi'), 'Inter', sans-serif;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Filter Tabs */
+        .gallery-filter-section {
+            padding: 60px 0 30px;
+            background: var(--bg-primary);
+        }
+
+        .filter-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .filter-tab {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+            font-family: var(--f-body, 'Satoshi'), 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 10px 28px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .filter-tab:hover {
+            border-color: var(--border-accent);
+            color: var(--text-primary);
+            background: var(--bg-card-hover);
+        }
+
+        .filter-tab.active {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
+            color: var(--bg-primary);
+            border-color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        /* Gallery Grid (Masonry) */
+        .gallery-grid-section {
+            padding: 30px 0 100px;
+            background: var(--bg-primary);
+        }
+
+        .masonry-grid {
+            columns: 4;
+            column-gap: 20px;
+        }
+
+        .gallery-item {
+            break-inside: avoid;
+            margin-bottom: 20px;
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            display: block;
+            border-radius: 12px;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-item-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 40%, transparent 70%);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 25px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .gallery-item:hover .gallery-item-overlay {
+            opacity: 1;
+        }
+
+        .gallery-item-overlay h4 {
+            font-family: var(--f-display, 'Cormorant Garamond'), Georgia, serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 5px;
+        }
+
+        .gallery-item-overlay span {
+            font-family: var(--f-body, 'Satoshi'), 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 500;
+        }
+
+        .gallery-item-overlay .view-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: rgba(201,169,110,0.2);
+            border: 1px solid var(--accent-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-gold);
+            font-size: 0.9rem;
+            backdrop-filter: blur(4px);
+        }
+
+        /* Gallery item hidden state for filtering */
+        .gallery-item.hidden {
+            display: none;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            background: rgba(0,0,0,0.95);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 25px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--text-primary);
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255,255,255,0.2);
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+        }
+
+        .lightbox-image-container {
+            max-width: 85vw;
+            max-height: 75vh;
+            position: relative;
+        }
+
+        .lightbox-image-container img {
+            max-width: 100%;
+            max-height: 75vh;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .lightbox-nav:hover {
+            background: rgba(201,169,110,0.3);
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+        }
+
+        .lightbox-prev {
+            left: -70px;
+        }
+
+        .lightbox-next {
+            right: -70px;
+        }
+
+        .lightbox-info {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .lightbox-counter {
+            font-family: var(--f-body, 'Satoshi'), 'Inter', sans-serif;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .lightbox-caption {
+            font-family: var(--f-display, 'Cormorant Garamond'), Georgia, serif;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+        }
+
+        /* Instagram CTA */
+        .instagram-section {
+            padding: 80px 0;
+            background: var(--bg-secondary);
+            text-align: center;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .instagram-section .section-label {
+            color: var(--accent-gold);
+            font-family: var(--f-body, 'Satoshi'), 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .instagram-section h2 {
+            font-family: var(--f-display, 'Cormorant Garamond'), Georgia, serif;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .instagram-section > .container > p {
+            font-family: var(--f-body, 'Satoshi'), 'Inter', sans-serif;
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .instagram-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+            margin-top: 2.5rem;
+        }
+
+        .instagram-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            aspect-ratio: 1;
+        }
+
+        .instagram-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .instagram-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .instagram-item::after {
+            content: '\f16d';
+            font-family: 'Font Awesome 6 Brands';
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .instagram-item:hover::after {
+            opacity: 1;
+        }
+
+        .instagram-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+            color: white;
+            font-family: var(--f-body, 'Satoshi'), 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 14px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .instagram-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(131, 58, 180, 0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .masonry-grid {
+                columns: 3;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .masonry-grid {
+                columns: 2;
+            }
+
+            .instagram-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .lightbox-prev {
+                left: 10px;
+            }
+
+            .lightbox-next {
+                right: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-hero {
+                height: 40vh;
+                min-height: 300px;
+            }
+
+            .filter-tabs {
+                gap: 8px;
+            }
+
+            .filter-tab {
+                padding: 8px 20px;
+                font-size: 0.82rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .masonry-grid {
+                columns: 2;
+                column-gap: 12px;
+            }
+
+            .gallery-item {
+                margin-bottom: 12px;
+            }
+
+            .instagram-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .lightbox-image-container {
+                max-width: 95vw;
+            }
+
+            .lightbox-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 0.9rem;
+            }
+
+            .lightbox-prev {
+                left: 5px;
+            }
+
+            .lightbox-next {
+                right: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===================== ANNOUNCEMENT BAR ===================== -->
+    <div class="announcement-bar">
+        <div class="container">
+            <p><i class="fas fa-utensils"></i> Order Online on Zomato &amp; Swiggy | <span class="gold-text">Free Delivery</span> on orders above ₹500</p>
+        </div>
+    </div>
+
+    <!-- ===================== HEADER / NAVIGATION ===================== -->
+    <header class="header" id="header">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon"><i class="fas fa-utensils"></i></span>
+                <div class="logo-text">
+                    <span class="logo-name">Foodway</span>
+                    <span class="logo-tagline">The King of Taste</span>
+                </div>
+            </a>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="menu.html" class="nav-link">Menu</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="gallery.html" class="nav-link active">Gallery</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="contact.html#reservation" class="nav-cta btn btn-primary">
+                    <i class="fas fa-calendar-check"></i> Reserve Table
+                </a>
+            </div>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay">
+        <div class="mobile-overlay-content">
+            <a href="index.html" class="mobile-nav-link">Home</a>
+            <a href="menu.html" class="mobile-nav-link">Menu</a>
+            <a href="about.html" class="mobile-nav-link">About</a>
+            <a href="gallery.html" class="mobile-nav-link active">Gallery</a>
+            <a href="contact.html" class="mobile-nav-link">Contact</a>
+            <a href="contact.html#reservation" class="btn btn-primary mobile-nav-cta">
+                <i class="fas fa-calendar-check"></i> Reserve a Table
+            </a>
+            <div class="mobile-nav-info">
+                <a href="tel:+917400221190"><i class="fas fa-phone"></i> +91 74002 21190</a>
+                <p><i class="fas fa-clock"></i> 11:00 AM – 12:00 Midnight</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== MAIN CONTENT ===================== -->
+    <main>
+
+        <!-- ===================== GALLERY HERO ===================== -->
+        <section class="gallery-hero">
+            <div class="gallery-hero-content" data-aos="fade-up">
+                <span class="section-label">Visual Experience</span>
+                <h1>Our Gallery</h1>
+                <p>A visual feast of our culinary creations and dining experience</p>
+            </div>
+        </section>
+
+        <!-- ===================== GALLERY FILTER TABS ===================== -->
+        <section class="gallery-filter-section">
+            <div class="container">
+                <div class="filter-tabs" data-aos="fade-up">
+                    <button class="filter-tab active" data-filter="all">All</button>
+                    <button class="filter-tab" data-filter="food">Food</button>
+                    <button class="filter-tab" data-filter="restaurant">Restaurant</button>
+                    <button class="filter-tab" data-filter="kitchen">Kitchen</button>
+                    <button class="filter-tab" data-filter="events">Events</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== GALLERY GRID ===================== -->
+        <section class="gallery-grid-section">
+            <div class="container">
+                <div class="masonry-grid" id="galleryGrid">
+
+                    <!-- 1. Tandoori Chicken Platter (food) — landscape -->
+                    <div class="gallery-item" data-category="food" data-index="0" data-aos="fade-up">
+                        <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=800&h=600&fit=crop" alt="Tandoori Chicken Platter" loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <span class="view-icon"><i class="fas fa-expand"></i></span>
+                            <h4>Tandoori Chicken Platter</h4>
+                            <span>Food</span>
+                        </div>
+                    </div>
+
+                    <!-- 2. Restaurant Interior (restaurant) — landscape -->
+                    <div class="gallery-item" data-category="restaurant" data-index="1" data-aos="fade-up" data-aos-delay="50">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&h=800&fit=crop" alt="Restaurant Interior" loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <span class="view-icon"><i class="fas fa-expand"></i></span>
+                            <h4>Restaurant Interior</h4>
+                            <span>Restaurant</span>
+                        </div>
+                    </div>
+
+                    <!-- 3. Butter Chicken (food) — portrait -->
+                    <div class="gallery-item" data-category="food" data-index="2" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=600&h=900&fit=crop" alt="Butter Chicken" loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <span class="view-icon"><i class="fas fa-expand"></i></span>
+                            <h4>Butter Chicken</h4>
+                            <span>Food</span>
+                        </div>
+                    </div>
+
+                    <!-- 4. Chef at Work (kitchen) — portrait -->
+                    <div class="gallery-item" data-category="kitchen" data-index="3" data-aos="fade-up" data-aos-delay="150">
+                        <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=600&h=900&fit=crop" alt="Chef at Work" loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <span class="view-icon"><i class="fas fa-expand"></i></span>
+                            <h4>Chef at Work</h4>
+                            <span>Kitchen</span>
+                        </div>
+                    </div>
+
+                    <!-- 5. Biryani Presentation (food) — landscape -->
+                    <div class="gallery-item" data-category="food" data-index="4" data-aos="fade-up">
+                        <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=800&h=600&fit=crop" alt="Biryani Presentation" loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <span class="view-icon"><i class="fas fa-expand"></i></span>
+                            <h4>Biryani Presentation</h4>
+                            <span>Food</span>
+                        </div>
+                    </div>
+
+                    <!-- 6. AC Dining Hall (restaurant) — landscape -->
+                    <div class="gallery-item" data-category="restaurant" data-index="5" data-aos="fade-up" data-aos-delay="50">
+                        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&h=600&fit=crop" alt="AC Dining Hall" loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <span class="view-icon"><i class="fas fa-expand"></i></span>
+                            <h4>AC Dining Hall</h4>
+                            <span>Restaurant</span>
+                        </div>
+                    </div>
+
+                    <!-- 7. Kebab Platter (food) — portrait -->
+                    <div class="gallery-item" data-category="food" data-index="6" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=600&h=900&fit=crop" alt="Kebab Platter" loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <span class="view-icon"><i class="fas fa-expand"></i></span>
+                            <h4>Kebab Platter</h4>
+                            <span>Food</span>
+                        </div>
+                    </div>
+
+                    <!-- 8. Birthday Celebration (events) — landscape -->
+                    <div class="gallery-item" data-category="events" data-index="7" data-aos="fade-up" data-aos-delay="150">
+                        <img src="https://images.unsplash.com/photo-1529543544282-8a0073ae4898?w=800&h=600&fit=crop" alt="Birthday Celebration" loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <span class="view-icon"><i class="fas fa-expand"></i></span>
+                            <h4>Birthday Celebration</h4>
+                            <span>Events</span>
+                        </div>
+                    </div>
+
+                    <!-- 9. Chinese Starters (food) — landscape -->
+                    <div class="gallery-item" data-category="food" data-index="8" data-aos="fade-up">
+                        <img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?w=800&h=600&fit=crop" alt="Chinese Starters" loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <span class="view-icon"><i class="fas fa-expand"></i></span>
+                            <h4>Chinese Starters</h4>
+                            <span>Food</span>
+                        </div>
+                    </div>
+
+                    <!-- 10. Dastarkhan Setup (restaurant) — portrait -->
+                    <div class="gallery-item" data-category="restaurant" data-index="9" data-aos="fade-up" data-aos-delay="50">
+                        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&h=900&fit=crop" alt="Dastarkhan Setup" loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <span class="view-icon"><i class="fas fa-expand"></i></span>
+                            <h4>Dastarkhan Setup</h4>
+                            <span>Restaurant</span>
+                        </div>
+                    </div>
+
+                    <!-- 11. Dessert Display (food) — portrait -->
+                    <div class="gallery-item" data-category="food" data-index="10" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&h=900&fit=crop" alt="Dessert Display" loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <span class="view-icon"><i class="fas fa-expand"></i></span>
+                            <h4>Dessert Display</h4>
+                            <span>Food</span>
+                        </div>
+                    </div>
+
+                    <!-- 12. Kitchen Operations (kitchen) — landscape -->
+                    <div class="gallery-item" data-category="kitchen" data-index="11" data-aos="fade-up" data-aos-delay="150">
+                        <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&h=600&fit=crop" alt="Kitchen Operations" loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <span class="view-icon"><i class="fas fa-expand"></i></span>
+                            <h4>Kitchen Operations</h4>
+                            <span>Kitchen</span>
+                        </div>
+                    </div>
+
+                    <!-- 13. Family Dining (events) — landscape -->
+                    <div class="gallery-item" data-category="events" data-index="12" data-aos="fade-up">
+                        <img src="https://images.unsplash.com/photo-1529543544282-8a0073ae4898?w=800&h=500&fit=crop" alt="Family Dining" loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <span class="view-icon"><i class="fas fa-expand"></i></span>
+                            <h4>Family Dining</h4>
+                            <span>Events</span>
+                        </div>
+                    </div>
+
+                    <!-- 14. Prawn Dishes (food) — landscape -->
+                    <div class="gallery-item" data-category="food" data-index="13" data-aos="fade-up" data-aos-delay="50">
+                        <img src="https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?w=800&h=600&fit=crop" alt="Prawn Dishes" loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <span class="view-icon"><i class="fas fa-expand"></i></span>
+                            <h4>Prawn Dishes</h4>
+                            <span>Food</span>
+                        </div>
+                    </div>
+
+                    <!-- 15. Restaurant Exterior (restaurant) — landscape -->
+                    <div class="gallery-item" data-category="restaurant" data-index="14" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&h=800&fit=crop" alt="Restaurant Exterior" loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <span class="view-icon"><i class="fas fa-expand"></i></span>
+                            <h4>Restaurant Exterior</h4>
+                            <span>Restaurant</span>
+                        </div>
+                    </div>
+
+                    <!-- 16. Chef Plating (kitchen) — portrait -->
+                    <div class="gallery-item" data-category="kitchen" data-index="15" data-aos="fade-up" data-aos-delay="150">
+                        <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=600&h=800&fit=crop" alt="Chef Plating" loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <span class="view-icon"><i class="fas fa-expand"></i></span>
+                            <h4>Chef Plating</h4>
+                            <span>Kitchen</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== LIGHTBOX ===================== -->
+        <div class="lightbox" id="lightbox">
+            <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="lightbox-image-container">
+                <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <img src="" alt="" id="lightboxImage">
+                <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="lightbox-info">
+                <div class="lightbox-counter" id="lightboxCounter">1 / 16</div>
+                <div class="lightbox-caption" id="lightboxCaption">Image caption</div>
+            </div>
+        </div>
+
+        <!-- ===================== INSTAGRAM CTA ===================== -->
+        <section class="instagram-section section">
+            <div class="container">
+                <span class="section-label" data-aos="fade-up">FOLLOW US</span>
+                <h2 data-aos="fade-up">Follow Us on <span class="gold-text">Instagram</span></h2>
+                <p data-aos="fade-up">Stay updated with our latest dishes, events, and behind-the-scenes moments</p>
+                <a href="#" class="instagram-btn" target="_blank" rel="noopener" data-aos="fade-up">
+                    <i class="fab fa-instagram"></i> @foodwayfamily
+                </a>
+                <div class="instagram-grid" data-aos="fade-up" data-aos-delay="100">
+                    <div class="instagram-item">
+                        <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=400&h=400&fit=crop" alt="Instagram Post 1" loading="lazy">
+                    </div>
+                    <div class="instagram-item">
+                        <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=400&h=400&fit=crop" alt="Instagram Post 2" loading="lazy">
+                    </div>
+                    <div class="instagram-item">
+                        <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400&h=400&fit=crop" alt="Instagram Post 3" loading="lazy">
+                    </div>
+                    <div class="instagram-item">
+                        <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=400&h=400&fit=crop" alt="Instagram Post 4" loading="lazy">
+                    </div>
+                    <div class="instagram-item">
+                        <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400&h=400&fit=crop" alt="Instagram Post 5" loading="lazy">
+                    </div>
+                    <div class="instagram-item">
+                        <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400&h=400&fit=crop" alt="Instagram Post 6" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <span class="logo-icon"><i class="fas fa-utensils"></i></span>
+                        <div class="logo-text">
+                            <span class="logo-name">Foodway</span>
+                            <span class="logo-tagline">The King of Taste</span>
+                        </div>
+                    </div>
+                    <p class="footer-desc">Authentic North Indian, Mughlai, Punjabi, Chinese &amp; Seafood restaurant in Bhandup West, Mumbai. Halal | No Beef.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Our Menu</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Opening Hours</h4>
+                    <ul class="footer-hours">
+                        <li><span>Mon – Thu</span><span>11 AM – 12 Midnight</span></li>
+                        <li><span>Friday</span><span>11 AM – 12:30 AM</span></li>
+                        <li><span>Sat – Sun</span><span>11 AM – 12 Midnight</span></li>
+                    </ul>
+                    <div class="footer-badges">
+                        <span class="badge"><i class="fas fa-certificate"></i> Halal</span>
+                        <span class="badge"><i class="fas fa-ban"></i> No Beef</span>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-location-dot"></i>
+                            <span>Shop No. 3, R.R. Singh Chawl, L.B.S. Marg, Opp. Bata Showroom, Bhandup West, Mumbai – 400078</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+917400221190">+91 74002 21190</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-star"></i>
+                            <span>4.2/5 on Google (4,339 reviews)</span>
+                        </li>
+                    </ul>
+                    <div class="footer-order-links">
+                        <a href="https://www.zomato.com/mumbai/foodway-family-restaurant-bhandup" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+                            Order on Zomato
+                        </a>
+                        <a href="https://www.swiggy.com/restaurants/foodway-family-restaurant-bhandup-mumbai" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+                            Order on Swiggy
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Foodway Family Restaurant. All Rights Reserved. | <span class="gold-text">The King of Taste</span></p>
+                <p class="footer-credits">Crafted with <i class="fas fa-heart" style="color: var(--accent-gold);"></i> for food lovers</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===================== MOBILE BOTTOM ACTION BAR ===================== -->
+    <div class="mobile-bottom-bar">
+        <a href="tel:+917400221190" class="mobile-bar-item">
+            <i class="fas fa-phone"></i>
+            <span>Call</span>
+        </a>
+        <a href="https://www.google.com/maps/place/Foodway+family+restaurant/@19.1623132,72.9375548,17z" target="_blank" rel="noopener" class="mobile-bar-item">
+            <i class="fas fa-location-dot"></i>
+            <span>Directions</span>
+        </a>
+        <a href="menu.html" class="mobile-bar-item">
+            <i class="fas fa-utensils"></i>
+            <span>Menu</span>
+        </a>
+        <a href="contact.html#reservation" class="mobile-bar-item">
+            <i class="fas fa-calendar-check"></i>
+            <span>Reserve</span>
+        </a>
+    </div>
+
+    <!-- ===================== SCRIPTS ===================== -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 80
+        });
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Hamburger menu
+        const hamburger = document.getElementById('hamburger');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileOverlay.classList.toggle('active');
+            document.body.style.overflow = mobileOverlay.classList.contains('active') ? 'hidden' : '';
+        });
+
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // ========== GALLERY FILTER ==========
+        const filterTabs = document.querySelectorAll('.filter-tab');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                filterTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                const filter = tab.getAttribute('data-filter');
+
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.classList.remove('hidden');
+                        item.style.display = '';
+                    } else {
+                        item.classList.add('hidden');
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // ========== LIGHTBOX ==========
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxCaption = document.getElementById('lightboxCaption');
+        const lightboxCounter = document.getElementById('lightboxCounter');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const lightboxPrev = document.getElementById('lightboxPrev');
+        const lightboxNext = document.getElementById('lightboxNext');
+
+        let currentIndex = 0;
+        let visibleItems = [];
+
+        function getVisibleItems() {
+            return Array.from(galleryItems).filter(item => !item.classList.contains('hidden'));
+        }
+
+        function openLightbox(index) {
+            visibleItems = getVisibleItems();
+            currentIndex = index;
+            updateLightboxImage();
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function updateLightboxImage() {
+            const item = visibleItems[currentIndex];
+            const img = item.querySelector('img');
+            const title = item.querySelector('.gallery-item-overlay h4').textContent;
+
+            lightboxImage.src = img.src.replace(/w=\d+/, 'w=1400').replace(/h=\d+/, 'h=1000');
+            lightboxImage.alt = title;
+            lightboxCaption.textContent = title;
+            lightboxCounter.textContent = (currentIndex + 1) + ' / ' + visibleItems.length;
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % visibleItems.length;
+            updateLightboxImage();
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length;
+            updateLightboxImage();
+        }
+
+        galleryItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                visibleItems = getVisibleItems();
+                const visibleIndex = visibleItems.indexOf(item);
+                openLightbox(visibleIndex >= 0 ? visibleIndex : 0);
+            });
+        });
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightboxPrev.addEventListener('click', prevImage);
+        lightboxNext.addEventListener('click', nextImage);
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') prevImage();
+            if (e.key === 'ArrowRight') nextImage();
+        });
+    </script>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/917400221190?text=Hi%20Foodway!%20I%20would%20like%20to%20know%20more." 
+       class="whatsapp-float" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</body>
+</html>

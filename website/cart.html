@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart | Foodway Family Restaurant</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body style="background: var(--bg-primary); padding: 50px;">
+    <div class="container">
+        <h1 class="section-title">Your Order</h1>
+        <div id="cartItemsContainer"></div>
+        <div class="cart-footer" style="margin-top: 20px; border-top: 1px solid var(--border-light); padding-top: 20px;">
+            <div style="display: flex; justify-content: space-between; font-size: 1.2rem; font-weight: 700;">
+                <span>Total:</span>
+                <span id="cartTotal">₹0</span>
+            </div>
+            <button id="checkoutBtn" class="btn btn-gold" style="width: 100%; margin-top: 20px;">Place Order</button>
+        </div>
+    </div>
+    <script src="js/cart.js"></script>
+</body>
+</html>

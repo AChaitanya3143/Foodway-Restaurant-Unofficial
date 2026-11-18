@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Menu | Foodway Family Restaurant – Bhandup West, Mumbai</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Explore the full menu of Foodway Family Restaurant, Bhandup West. North Indian, Mughlai, Punjabi, Chinese & Seafood. Chicken Specials, Biryani, Tandoori, Paneer dishes & more.">
+    <meta name="keywords" content="Foodway menu, restaurant menu Bhandup, North Indian menu, Biryani Bhandup, Tandoori, Mughlai food">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.foodwayrestaurant.com/menu.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Full Menu | Foodway Family Restaurant">
+    <meta property="og:description" content="Authentic North Indian, Mughlai, Chinese & Seafood menu. Order on Zomato & Swiggy.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?q=80&w=1200">
+    <meta property="og:url" content="https://www.foodwayrestaurant.com/menu.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>">
+
+    <!-- Google Fonts (premium redesign) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Satoshi (body) via Fontshare -->
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Ionicons (outline UI icons) -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <!-- ═══════ UNIFIED NAVIGATION ═══════ -->
+    <header class="nav" id="navbar">
+        <div class="nav__inner">
+            <a href="index.html" class="nav__brand">
+                <span class="nav__brand-name">Foodway</span>
+            </a>
+            <nav class="nav__menu" id="navMenu">
+                <a href="index.html" class="nav__link">Home</a>
+                <a href="menu.html" class="nav__link nav__link--active">Menu</a>
+                <a href="about.html" class="nav__link">Our Story</a>
+                <a href="gallery.html" class="nav__link">Gallery</a>
+                <a href="contact.html" class="nav__link">Contact</a>
+            </nav>
+            <div class="nav__actions">
+                <a href="contact.html#reservation" class="nav__cta">Reserve a Table</a>
+                <button class="nav__cart cart-toggle" aria-label="Cart">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="nav__cart-badge cart-badge-count">0</span>
+                </button>
+            </div>
+            <button class="nav__hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ═══════ MAIN CONTENT ═══════ -->
+    <main>
+        <section class="menu-section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up" style="text-align:center; margin-bottom: 30px;">
+                    <span style="color: var(--gold-primary); font-family: var(--f-accent); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.35em; text-transform: uppercase; display: block; margin-bottom: 1rem;">OUR CULINARY COLLECTION</span>
+                    <h2 style="font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; color: var(--text-primary); line-height: 1.15;">Explore Our <span style="color: var(--gold-primary);">Menu</span></h2>
+                </div>
+                <div class="menu-search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="menuSearchInput" placeholder="Search our 200+ dishes...">
+                </div>
+                <div class="menu-filter-bar">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="mughlai">Mughlai</button>
+                    <button class="filter-btn" data-filter="tandoor">Tandoor</button>
+                    <button class="filter-btn" data-filter="north-indian">Indian</button>
+                    <button class="filter-btn" data-filter="chinese">Chinese</button>
+                    <button class="filter-btn" data-filter="seafood">Seafood</button>
+                    <button class="filter-btn" data-filter="combos">Combos</button>
+                    <button class="filter-btn" data-filter="desserts">Desserts</button>
+                </div>
+                <div class="menu-grid" id="menuGridContainer">
+                    <!-- JS Populated -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ═══════ UNIFIED FOOTER ═══════ -->
+    <footer class="footer--unified">
+        <div class="footer__inner">
+            <div class="footer__brand">
+                <h3 class="footer__name">FOODWAY</h3>
+                <p class="footer__tagline">Family Restaurant · Est. 2011</p>
+            </div>
+            <nav class="footer__links">
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="about.html">Our Story</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="footer__contact">
+                <p>Shop No. 3, R.R. Singh Chawl, L.B.S. Marg,<br>
+                   Opp. Bata Showroom, Sonapur, Bhandup West,<br>
+                   Mumbai – 400078</p>
+                <a href="tel:+917400221190" class="footer__phone">+91 74002 21190</a>
+            </div>
+            <div class="footer__social">
+                <a href="#" aria-label="Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
+                <a href="#" aria-label="Facebook"><ion-icon name="logo-facebook"></ion-icon></a>
+                <a href="#" aria-label="YouTube"><ion-icon name="logo-youtube"></ion-icon></a>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2026 Foodway Family Restaurant. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Cart Drawer -->
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button id="closeCartBtn" aria-label="Close cart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items-list" id="cartItemsContainer"></div>
+        <div class="cart-footer">
+            <div class="cart-summary">
+                <span>Subtotal</span>
+                <span id="cartSubtotal">₹0</span>
+            </div>
+            <div class="cart-summary">
+                <span>Delivery</span>
+                <span id="cartDelivery">₹40</span>
+            </div>
+            <div class="cart-summary cart-total">
+                <span>Total</span>
+                <span id="cartTotal">₹0</span>
+            </div>
+            <button id="checkoutBtn">Proceed to Checkout</button>
+        </div>
+    </div>
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/917400221190?text=Hi%20Foodway!%20I%20would%20like%20to%20place%20an%20order."
+       class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/menu.js"></script>
+</body>
+</html>

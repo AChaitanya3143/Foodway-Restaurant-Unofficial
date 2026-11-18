@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodway Family Restaurant | The King of Taste</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="three-bg-canvas"></div>
+
+    <header id="navbar" class="navbar">
+        <div class="container nav-container">
+            <a href="main.html" class="brand-logo">
+                <div class="brand-text-wrapper">
+                    <span class="brand-name">Foodway</span>
+                    <span class="brand-slogan">The King of Taste</span>
+                </div>
+            </a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="main.html" class="nav-link active">Home</a>
+                <a href="menu.html" class="nav-link">Menu</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="menu.html" class="btn btn-gold">Reserve Table</a>
+                <button class="cart-toggle cart-icon-btn">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-badge-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-slider">
+                <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?q=80&w=2000');"></div>
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="container hero-content-wrapper">
+                <div class="hero-grid">
+                    <div class="hero-text">
+                        <span class="section-label">Exceptional Cuisine</span>
+                        <h1 class="hero-headline heading-serif">Foodway Family Restaurant – The King of Taste in Bhandup</h1>
+                        <p class="hero-subheadline">Serving fresh, multi-cuisine North Indian, Mughlai, and Chinese favorites for years.</p>
+                        <div class="hero-ctas">
+                            <a href="https://zomato.com" target="_blank" class="btn btn-zomato">Order on Zomato</a>
+                            <a href="https://swiggy.com" target="_blank" class="btn btn-swiggy">Order on Swiggy</a>
+                        </div>
+                        <div class="hero-trust-indicators">
+                            <span class="trust-item"><i class="fa-solid fa-check-circle"></i> Fresh Ingredients</span>
+                            <span class="trust-item"><i class="fa-solid fa-check-circle"></i> No Beef Served</span>
+                        </div>
+                    </div>
+                    <div class="hero-visual-card">
+                        <img src="https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?q=80&w=800" alt="Foodway Signature">
+                        <div class="hero-card-tag">
+                            <h4>Chicken Foodway Special</h4>
+                            <p>Our Signature Slow-Cooked Masterpiece</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="usps-section">
+            <div class="container">
+                <div class="usps-grid">
+                    <div class="usp-card">
+                        <div class="usp-icon-box"><i class="fa-solid fa-couch"></i></div>
+                        <h3>Dastarkhan & AC Dining</h3>
+                        <p>Enjoy our traditional floor seating or comfortable air-conditioned halls, perfect for large groups.</p>
+                    </div>
+                    <div class="usp-card">
+                        <div class="usp-icon-box"><i class="fa-solid fa-fire-burner"></i></div>
+                        <h3>Slow-Cooked Signatures</h3>
+                        <p>Gravies simmered fresh daily, never reheated, ensuring every bite is rich with authentic flavor.</p>
+                    </div>
+                    <div class="usp-card">
+                        <div class="usp-icon-box"><i class="fa-solid fa-people-group"></i></div>
+                        <h3>Family-First Hospitality</h3>
+                        <p>Generous portions and kid-friendly dining for every celebration with your loved ones.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4 class="heading-serif">Foodway Family Restaurant</h4>
+                <p>The King of Taste in Bhandup West, serving authentic North Indian, Mughlai & Chinese cuisines for years.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Hours</h4>
+                <p>Mon–Sun: 11:00 AM – 12:00 AM<br>Fri: Extended until 12:30 AM</p>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="announcement-social">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Foodway Family Restaurant. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="js/three-bg.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>
